@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}add_data page{% endblock %}
+
+
+{% block content %}
+<center>
+ <form method="POST" action="/submit">
+ <table>
+      <tr>
+ <td colspan="2" style="text-align: center;">
+ <h1> Add the Data :</h1>
+ </td>
+ </tr>
+ <tr>
+ <td><label for="personName">Name:</label></td>
+ <td><input type="text" id="personName" name="personName" required></td>
+ </tr>
+ <tr>
+ <td><label for="age">Age:</label></td>
+ <td><input type="text" id="age" name="age" required></td>
+ </tr>
+      <tr>
+ <td><label>Gender:</label></td>
+ <td>
+ <input type="radio" id="male" name="gender" value="male" required>
+ <label for="male">Male</label>
+ <input type="radio" id="female" name="gender" value="female" required>
+ <label for="female">Female</label>
+ <input type="radio" id="other" name="gender" value="other" required>
+ <label for="other">Other</label>
+ </td>
+ </tr>
+      <tr>
+ <td><label for="birthdate">Date of Birth:</label></td>
+ <td><input type="date" id="birthdate" name="birthdate" required></td>
+ </tr>
+ <tr>
+ <td><label for="city">City:</label></td>
+ <td><input type="text" id="city" name="city" required></td>
+ </tr>
+ <tr>
+ <td><label for="state">State :</label></td>
+ <td><input type="text" id="state" name="state"
+required></td>
+ </tr>
+
+ <tr>
+ <td><label for="country">Country  :</label></td>
+ <td><input type="text" id="country" name="country" required></td>
+ </tr>
+
+ 
+     <tr>
+ <td><label for="rank">Rank  :</label></td>
+ <td><input type="text" id="rank" name="rank" required></td>
+ </tr>
+     <tr>
+ <td><label for="source">Source  :</label></td>
+ <td><input type="text" id="source" name="source" required></td>
+ </tr>
+     <tr>
+ <td><label for="finalWorth">FinalWorth  :</label></td>
+ <td><input type="text" id="finalWorth" name="finalWorth" required></td>
+ </tr>
+     <tr>
+ <td><label for="category">Category  :</label></td>
+ <td><input type="text" id="category" name="category" required></td>
+ </tr>
+      <tr>
+ <td><label for="organization">Organization  :</label></td>
+ <td><input type="text" id="organization" name="organization" required></td>
+ </tr>
+     <tr>
+ <td><label for="industries">Industries  :</label></td>
+ <td><input type="text" id="industries" name="industries" required></td>
+ </tr>
+     <tr>
+ <td><label for="title">Title  :</label></td>
+ <td><input type="text" id="title" name="title" required></td>
+ </tr>
+<tr>
+ <td colspan="2" style="text-align: center;">
+ <input type="submit" value="submit">
+ </td>
+ </tr>
+ </table>
+ </form>
+    </center>
+{% endblock %}

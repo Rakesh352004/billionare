@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}index page{% endblock %}
+{% block content %}
+ <h1> <center>Top 5 Richest Billionare's in the World</center> </h1>
+<div class="container">
+
+
+
+    <div class="billionaire">
+            <img src=https://tse3.mm.bing.net/th?id=OIP.EpX3SX90x9aCgOpGoZJ0VwAAAA&pid=Api&P=0&h=180 alt="Elon Musk">
+            <h3>Elon Musk</h3>
+            <p>$230 Billion</p>
+    </div>
+        <div class="billionaire">
+            <img src=https://tse3.mm.bing.net/th?id=OIP.2beCdrhn1YLi0_ehBuqORAHaFj&pid=Api&P=0&h=180 alt="Jeff Bezos">
+            <h3>Jeff Bezos</h3>
+            <p>$145 Billion</p>
+        </div>
+        <div class="billionaire">
+            <img src=https://tse4.mm.bing.net/th?id=OIP.i5tZTEohH7H5J1ZJ19nm4gHaJe&pid=Api&P=0&h=180 alt="Bernard Arnault">
+            <h3>Bernard Arnault</h3>
+            <p>$180 Billion</p>
+        </div>
+        <div class="billionaire">
+            <img src=https://tse3.mm.bing.net/th?id=OIP.VqoQKk6o8lvUshVyMWxVsAHaE7&pid=Api&P=0&h=180 alt="Bill Gates">
+            <h3>Bill Gates</h3>
+            <p>$105 Billion</p>
+        </div>
+        <div class="billionaire">
+            <img src=https://tse4.mm.bing.net/th?id=OIF.wfxUmEGYpU0CBBLLxRQfyw&pid=Api&P=0&h=180 alt="Warren Buffet">
+            <h3>Warren Buffett</h3>
+            <p>$90 Billion</p>
+        </div>
+    </div>
+<h1> <center>Explore the World of Billionaires </center> </h1>
+
+
+<center>
+    
+        {% for data in content %}
+        <div class="card-container" style="width: 18rem;">
+          <div class="card">
+              <h5 class="card-title"> <h3> #Rank</h3> {{ data.rank }}</h5>
+            <p class="card-text"><h3> #Name</h3>{{ data.source }}</p>
+            <p  class="card-text"><h3> #FinalWorth</h3>{{ data.finalWorth }}</p>
+              <p  class="card-text"><h3> #Title</h3>{{ data.title }}</p>
+
+          </div>
+        </div>
+        {% endfor %}
+</center>
+
+
+{% endblock %}
+
+
+
+
+

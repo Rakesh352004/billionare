@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}dashboard page{% endblock %}
+
+{% block content %}
+
+    <header>
+        <h1> Dashboard</h1>
+    </header>
+    <div class="container">
+        <div class="chart-container">
+            <!-- Pie Chart -->
+            <div class="chart-box">
+                <h3>Wealth Distribution by Region</h3>
+                <canvas id="regionChart"></canvas>
+            </div>
+            <!-- Bar Chart -->
+            <div class="chart-box">
+                <h3>Top 5 Billionaires' Net Worth</h3>
+                <canvas id="topBillionairesChart"></canvas>
+            </div>
+            <!-- Line Chart -->
+            <div class="chart-box">
+                <h3>Yearly Growth of Billionaires</h3>
+                <canvas id="growthChart"></canvas>
+            </div>
+            <!-- Doughnut Chart -->
+            <div class="chart-box">
+                <h3>Industry Distribution</h3>
+                <canvas id="industryChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Region Distribution Chart
+        const regionCtx = document.getElementById('regionChart').getContext('2d');
+        new Chart(regionCtx, {
+            type: 'pie',
+            data: {
+                labels: ['North America', 'Europe', 'Asia', 'Others'],
+                datasets: [{
+                    label: 'Region Distribution',
+                    data: [45, 30, 20, 5],
+                    backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56', '#4bc0c0']
+                }]
+            }
+        });
+
+        // Top 5 Billionaires Chart
+        const topBillionairesCtx = document.getElementById('topBillionairesChart').getContext('2d');
+        new Chart(topBillionairesCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Elon Musk', 'Bernard Arnault', 'Jeff Bezos', 'Bill Gates', 'Warren Buffett'],
+                datasets: [{
+                    label: 'Net Worth (in $B)',
+                    data: [250, 200, 180, 150, 120],
+                    backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56', '#4bc0c0', '#9966ff']
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Growth Chart
+        const growthCtx = document.getElementById('growthChart').getContext('2d');
+        new Chart(growthCtx, {
+            type: 'line',
+            data: {
+                labels: ['2019', '2020', '2021', '2022', '2023'],
+                datasets: [{
+                    label: 'Number of Billionaires',
+                    data: [2200, 2300, 2400, 2600, 2800],
+                    borderColor: '#36a2eb',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+
+        // Industry Distribution Chart
+        const industryCtx = document.getElementById('industryChart').getContext('2d');
+        new Chart(industryCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Tech', 'Finance', 'Retail', 'Energy', 'Other'],
+                datasets: [{
+                    label: 'Industry Distribution',
+                    data: [35, 25, 20, 10, 10],
+                    backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56', '#4bc0c0', '#9966ff']
+                }]
+            }
+        });
+    </script>
+
+{% endblock %}
